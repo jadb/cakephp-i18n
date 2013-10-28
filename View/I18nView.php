@@ -21,7 +21,7 @@ class I18nView extends View {
       $var = $el . 'Path';
       $localized = $this->{$var} . DS . Configure::read('Config.language');
 
-      if (file_exists(APP . 'View' . DS . $localized)) {
+      if (file_exists(APP . 'View' . DS . ('layout' == $el ? 'Layouts' . DS : '') . $localized)) {
         $this->{$var} = $localized;
       }
     }
